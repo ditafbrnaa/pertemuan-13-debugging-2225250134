@@ -1,15 +1,18 @@
 def hitung_rata_rata(nilai):
-    return sum(nilai) / 5
+    # Perbaikan: Membagi dengan len(nilai) agar dinamis, bukan statis dibagi 5
+    return sum(nilai) / len(nilai)
 
 def status(nilai):
-    if nilai > 60:
+    # Perbaikan: Mengubah operator dari > menjadi >= agar angka 60 terbaca Lulus
+    if nilai >= 60:
         return "Lulus"
     return "Tidak lulus"
 
 def nilai_tertinggi(nilai):
-    tertinggi = 0
+    # Perbaikan: Inisialisasi awal mengambil elemen pertama, dan operator diubah menjadi >
+    tertinggi = nilai[0]
     for x in nilai:
-        if x < tertinggi:
+        if x > tertinggi:
             tertinggi = x
     return tertinggi
 
